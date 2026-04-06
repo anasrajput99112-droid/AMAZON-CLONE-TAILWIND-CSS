@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon clone</title>
+    <link href="/src/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="w-full h-full">
+      <nav
+        class="flex items-center justify-between p-4 bg-[#131921] text-white"
+      >
+        <!-- logo -->
+        <div>
+          <a href="/">
+            <img
+              src="/assets/amazon_logo.png"
+              alt="amazon logo"
+              class="w-24 object-contain"
+            />
+          </a>
+        </div>
+        <!-- location  -->
+        <div class="flex items-end ml-3.75 text-[13px]">
+          <img class="h-[20px]" src="/assets/location_icon.png" alt="" />
+          <div class="text-[#c4c4c4]">
+            <p>Deliver to</p>
+            <h1 class="text-white text-[14px]">United States</h1>
+          </div>
+        </div>
+
+        <!-- navigation search -->
+        <div class="flex items-center flex-1 mx-4 bg-white rounded-md">
+          <select
+            name="categories"
+            id="categories"
+            class="h-10 rounded-l-md focus:outline-none text-sm text-gray-600 p-2"
+          >
+            <option value="all">All</option>
+            <option value="books">Books</option>
+            <option value="electronics">Electronics</option>
+            <option value="clothing">Clothing</option>
+            <option value="home">Home & Kitchen</option>
+          </select>
+          <input
+            type="text"
+            placeholder="Search Amazon"
+            class="flex-1 h-10 px-4 focus:outline-none text-sm"
+          />
+          <button class="bg-[#febd69] h-10 px-4 rounded-r-md">
+            <i class="fas fa-search"></i>
+          </button>
+      </nav>
+    </header>
+
+    <!-- main section -->
+    <main></main>
+  </body>
+</html>
