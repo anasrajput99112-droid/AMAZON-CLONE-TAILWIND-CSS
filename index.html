@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amazon clone</title>
     <link href="/src/output.css" rel="stylesheet" />
+    <!-- font awesome -->
     <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
   </head>
+
   <body>
     <header class="w-full h-full">
       <nav
-        class="flex items-center justify-between p-4 bg-[#131921] text-white"
+        class="flex flex-col md:flex-row items-center gap-3.5 justify-between p-4 bg-[#131921] text-white"
       >
         <!-- logo -->
         <div>
@@ -29,20 +28,29 @@
           </a>
         </div>
         <!-- location  -->
-        <div class="flex items-end ml-3.75 text-[13px]">
-          <img class="h-[20px]" src="/assets/location_icon.png" alt="" />
+        <div class="flex gap-1.5 items-end ml-3.75 text-[13px]">
+          <i class="ri-map-pin-line text-[20px]"></i>
           <div class="text-[#c4c4c4]">
             <p>Deliver to</p>
-            <h1 class="text-white text-[14px]">United States</h1>
+            <select name="country" class="text-white text-[14px] font-[600]">
+              <option class="p-4 bg-gray-500" value="usa">United States</option>
+              <option class="p-4 bg-gray-500" value="pakistan">pakistan</option>
+              <option class="p-4 bg-gray-500" value="uk">United Kingdom</option>
+              <option class="p-4 bg-gray-500" value="canada">Canada</option>
+              <option class="p-4 bg-gray-500" value="australia">
+                Australia
+              </option>
+              <option class="p-4 bg-gray-500" value="india">India</option>
+            </select>
           </div>
         </div>
 
         <!-- navigation search -->
-        <div class="flex items-center flex-1 mx-4 bg-white rounded-md">
+        <div class="w-full flex items-center flex-1 mx-4 bg-white rounded-md">
           <select
             name="categories"
             id="categories"
-            class="h-10 rounded-l-md focus:outline-none text-sm text-gray-600 p-2"
+            class="h-10 w-[10%] rounded-l-md focus:outline-none text-sm text-gray-600 bg-[#c4c4c4] p-2"
           >
             <option value="all">All</option>
             <option value="books">Books</option>
@@ -53,15 +61,135 @@
           <input
             type="text"
             placeholder="Search Amazon"
-            class="flex-1 h-10 px-4 focus:outline-none text-sm"
+            class="flex-1 h-10 px-4 focus:outline-none text-sm text-gray-600"
           />
           <button class="bg-[#febd69] h-10 px-4 rounded-r-md">
-            <i class="fas fa-search"></i>
+            <i class="ri-search-line text-gray-600 text-[20px] font-[600]"></i>
           </button>
+        </div>
+
+        <!-- navigation language -->
+        <div class="flex gap-1 items-center text-[13px] font-[600]">
+          <img class="h-[20px] mr-1" src="/assets/us_flag.png" alt="" />
+          <span class="text-[#c4c4c4]">EN</span>
+          <img class="w-[8px]" src="/assets/dropdown_icon.png" alt="" />
+        </div>
+
+        <!-- navigation text -->
+        <div class="flex flex-col leading-2 gap-2 text-[13px] font-[600]">
+          <span class="text-[#c4c4c4] text-[10px]">Hello, Sign in</span>
+          <div class="flex gap-1">
+            <span class="text-white text-[14px]">Account & Lists</span>
+            <img class="w-[8px]" src="/assets/dropdown_icon.png" alt="" />
+          </div>
+        </div>
+
+        <!-- returns and orders -->
+        <div class="flex flex-col leading-2 gap-2 text-[13px] font-[600]">
+          <span class="text-[#c4c4c4]">Returns</span>
+          <span class="text-white">& Orders</span>
+        </div>
+
+        <!-- navigation cart -->
+        <div class="flex items-center gap-1">
+          <a href="/cart" class="flex items-end gap-1">
+            <img class="w-[35px]" src="/assets/cart_icon.png" alt="" />
+            <h4 class="text-[13px] font-[600]">Cart</h4>
+          </a>
+        </div>
       </nav>
+
+      <!-- sub navigation menu -->
+      <div
+        class="flex items-center px-[20px] py-[5px] gap-6 bg-[#232f3e] text-white text-[14px] font-[600]"
+      >
+        <div class="flex items-center gap-1 cursor-pointer">
+          <i class="ri-menu-line text-[25px]"></i>
+          <span class="text-[15px]">All</span>
+        </div>
+
+        <div class="font-[500]">
+          <a href="">Today's Deals</a>
+        </div>
+        <div class="font-[500]">
+          <a href="">Gift Cards</a>
+        </div>
+        <div class="font-[500]">
+          <a href="">Sell</a>
+        </div>
+        <div class="font-[500]">
+          <a href="">Registry</a>
+        </div>
+        <div class="font-[500]">
+          <a href="">Prime Video</a>
+        </div>
+        <div class="font-[500]">
+          <a href="">Customer Service</a>
+        </div>
+      </div>
     </header>
 
-    <!-- main section -->
-    <main></main>
+    <main>
+      <!-- hero section header slider -->
+      <section>
+        <div class="text-4xl">
+          <a
+            id="control_prev"
+            href="#"
+            class="absolute top-[30%] z-[10] bg-[#ffffff4f] font-[600] cursor-pointer text-[#0000007b] p-4"
+          >
+            <i class="ri-arrow-left-s-line"></i>
+          </a>
+          <a
+            id="control_next"
+            href="#"
+            class="absolute right-0 top-[30%] z-[10] bg-[#ffffff4f] font-[600] cursor-pointer text-[#0000007b] p-4"
+          >
+            <i class="ri-arrow-right-s-line"></i>
+          </a>
+        </div>
+
+        <ul class="flex overflow-y-hidden">
+          <img
+            id="images"
+            class="max-w-[100%] [mask-image:linear-gradient(to_bottom,_#000000_50%,_transparent_100%)] [--webkit-mask-image:linear-gradient(to_bottom,_#000000_50%,_transparent_100%)]"
+            src="./assets/header1.jpg"
+            alt="Header 1"
+          />
+          <img
+            id="images"
+            class="max-w-[100%] [mask-image:linear-gradient(to_bottom,_#000000_50%,_transparent_100%)] [--webkit-mask-image:linear-gradient(to_bottom,_#000000_50%,_transparent_100%)]"
+            src="./assets/header2.jpg"
+            alt="Header 2"
+          />
+          <img
+            id="images"
+            class="max-w-[100%] [mask-image:linear-gradient(to_bottom,_#000000_50%,_transparent_100%)] [--webkit-mask-image:linear-gradient(to_bottom,_#000000_50%,_transparent_100%)]"
+            src="./assets/header3.jpg"
+            alt="Header 3"
+          />
+          <img
+            id="images"
+            class="max-w-[100%] [mask-image:linear-gradient(to_bottom,_#000000_50%,_transparent_100%)] [--webkit-mask-image:linear-gradient(to_bottom,_#000000_50%,_transparent_100%)]"
+            src="./assets/header4.jpg"
+            alt="Header 4"
+          />
+          <img
+            id="images"
+            class="max-w-[100%] [mask-image:linear-gradient(to_bottom,_#000000_50%,_transparent_100%)] [--webkit-mask-image:linear-gradient(to_bottom,_#000000_50%,_transparent_100%)]"
+            src="./assets/header5.jpg"
+            alt="Header 5"
+          />
+          <img
+            id="images"
+            class="max-w-[100%] [mask-image:linear-gradient(to_bottom,_#000000_50%,_transparent_100%)] [--webkit-mask-image:linear-gradient(to_bottom,_#000000_50%,_transparent_100%)]"
+            src="./assets/header6.jpg"
+            alt="Header 6"
+          />
+        </ul>
+      </section>
+    </main>
+
+    <script src="/js/main.js"></script>
   </body>
 </html>
