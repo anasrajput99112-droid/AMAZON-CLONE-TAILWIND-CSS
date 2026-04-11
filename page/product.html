@@ -5,6 +5,716 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>product</title>
     <link href="/src/output.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body class="bg-white">
+    <header class="w-full h-full">
+      <nav
+        class="flex flex-col md:flex-row items-center gap-3.5 justify-between p-4 bg-[#131921] text-white"
+      >
+        <!-- logo -->
+        <div>
+          <a href="/">
+            <img
+              src="/assets/amazon_logo.png"
+              alt="amazon logo"
+              class="w-24 object-contain"
+            />
+          </a>
+        </div>
+        <!-- location  -->
+        <div class="flex gap-1.5 items-end ml-3.75 text-[13px]">
+          <i class="ri-map-pin-line text-[20px]"></i>
+          <div class="text-[#c4c4c4]">
+            <p>Deliver to</p>
+            <select name="country" class="text-white text-[14px] font-[600]">
+              <option class="p-4 bg-gray-500" value="usa">United States</option>
+              <option class="p-4 bg-gray-500" value="pakistan">pakistan</option>
+              <option class="p-4 bg-gray-500" value="uk">United Kingdom</option>
+              <option class="p-4 bg-gray-500" value="canada">Canada</option>
+              <option class="p-4 bg-gray-500" value="australia">
+                Australia
+              </option>
+              <option class="p-4 bg-gray-500" value="india">India</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- navigation search -->
+        <div class="w-full flex items-center flex-1 mx-4 bg-white rounded-md">
+          <select
+            name="categories"
+            id="categories"
+            class="h-10 w-[10%] rounded-l-md focus:outline-none text-sm text-gray-600 bg-[#c4c4c4] p-2"
+          >
+            <option value="all">All</option>
+            <option value="books">Books</option>
+            <option value="electronics">Electronics</option>
+            <option value="clothing">Clothing</option>
+            <option value="home">Home & Kitchen</option>
+          </select>
+          <input
+            type="text"
+            placeholder="Search Amazon"
+            class="flex-1 h-10 px-4 focus:outline-none text-sm text-gray-600"
+          />
+          <button class="bg-[#febd69] h-10 px-4 rounded-r-md">
+            <i class="ri-search-line text-gray-600 text-[20px] font-[600]"></i>
+          </button>
+        </div>
+
+        <!-- navigation language -->
+        <div class="flex gap-1 items-center text-[13px] font-[600]">
+          <img class="h-[20px] mr-1" src="/assets/us_flag.png" alt="" />
+          <span class="text-[#c4c4c4]">EN</span>
+          <img class="w-[8px]" src="/assets/dropdown_icon.png" alt="" />
+        </div>
+
+        <!-- navigation text -->
+        <div class="flex flex-col leading-2 gap-2 text-[13px] font-[600]">
+          <span class="text-[#c4c4c4] text-[10px]">Hello, Sign in</span>
+          <div class="flex gap-1">
+            <span class="text-white text-[14px]">Account & Lists</span>
+            <img class="w-[8px]" src="/assets/dropdown_icon.png" alt="" />
+          </div>
+        </div>
+
+        <!-- returns and orders -->
+        <div class="flex flex-col leading-2 gap-2 text-[13px] font-[600]">
+          <span class="text-[#c4c4c4]">Returns</span>
+          <span class="text-white">& Orders</span>
+        </div>
+
+        <!-- navigation cart -->
+        <div class="flex items-center gap-1">
+          <a href="/cart" class="flex items-end gap-1">
+            <img class="w-[35px]" src="/assets/cart_icon.png" alt="" />
+            <h4 class="text-[13px] font-[600]">Cart</h4>
+          </a>
+        </div>
+      </nav>
+
+      <!-- sub navigation menu -->
+      <div
+        class="flex items-center px-[20px] py-[5px] gap-6 bg-[#232f3e] text-white text-[14px] font-[600]"
+      >
+        <div class="flex items-center gap-1 cursor-pointer">
+          <i class="ri-menu-line text-[25px]"></i>
+          <span class="text-[15px]">All</span>
+        </div>
+
+        <div class="font-[500]">
+          <a href="">Today's Deals</a>
+        </div>
+        <div class="font-[500]">
+          <a href="">Gift Cards</a>
+        </div>
+        <div class="font-[500]">
+          <a href="">Sell</a>
+        </div>
+        <div class="font-[500]">
+          <a href="">Registry</a>
+        </div>
+        <div class="font-[500]">
+          <a href="">Prime Video</a>
+        </div>
+        <div class="font-[500]">
+          <a href="">Customer Service</a>
+        </div>
+      </div>
+    </header>
+
+    <div>
+      <p class="py-[10px] px-[20px] text-[13px] text-[#565656]">
+        Video Games > PC > Accessories > Headsets
+      </p>
+    </div>
+
+    <!-- product display -->
+    <div
+      id="product-display"
+      class="min-h-[100%] py-[10px] px-[20px] flex flex-col md:flex-row gap-10"
+    >
+      <div class="flex flex-1 gap-[10px]">
+        <div class="product-icon flex flex-col gap-[10px]">
+          <img
+            class="border-[1px] border-gray-400 p-[5px] rounded-[10px]"
+            src="/assets/product_img.jpg"
+            alt="Product Image"
+            width="60"
+          />
+          <img
+            class="border-[1px] border-gray-400 p-[5px] rounded-[10px]"
+            src="/assets/product_img.jpg"
+            alt="Product Image"
+            width="60"
+          />
+          <img
+            class="border-[1px] border-gray-400 p-[5px] rounded-[10px]"
+            src="/assets/product_img.jpg"
+            alt="Product Image"
+            width="60"
+          />
+          <img
+            class="border-[1px] border-gray-400 p-[5px] rounded-[10px]"
+            src="/assets/product_img.jpg"
+            alt="Product Image"
+            width="60"
+          />
+          <img
+            class="border-[1px] border-gray-400 p-[5px] rounded-[10px]"
+            src="/assets/product_img.jpg"
+            alt="Product Image"
+            width="60"
+          />
+        </div>
+        <div class="product-main-img">
+          <img src="/assets/product_img.jpg" alt="Product Image" width="300" />
+        </div>
+      </div>
+      <div class="leading-8 flex-1">
+        <h1 class="text-[25px] font-[600]">
+          HyperX Cloud Stinger Gaming Headset - Lightweight Comfort with
+          Immersive Sound, Noise-Cancelling Microphone, and Durable Build for
+          PC, PS4, Xbox One, Nintendo Switch, and Mobile Devices (HX-HSCS-BK/NA)
+        </h1>
+        <p class="mt-[5px] text-[#007185] text-[14px]">
+          Vist the BENGOO store.
+        </p>
+        <div class="product-rating">
+          <div class="flex gap-2">
+            <span class="text-[14px] font-[600] text-[#007185]"
+              >4.5 out of 5 stars</span
+            >
+            <div class="text-amber-400">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-half-line"></i>
+            </div>
+          </div>
+          <div>
+            <span class="text-[12px] text-[#565656]">(1,234 ratings)</span>
+          </div>
+          <p class="text-[#007185]">
+            <span
+              class="text-white bg-[#c73500] py-[2px] px-[10px] rounded-[3px] text-[14px]"
+              >#1 Best Seller</span
+            >
+            in Pc Games Headsets
+          </p>
+          <h5 class="font-[400]">10k+ bought in the last month</h5>
+          <hr />
+        </div>
+        <!-- products price -->
+        <div class="flex flex-col gap-[5px] mt-[10px]">
+          <div class="flex items-center gap-[10px] my-[10px] mx-0">
+            <p class="text-[20px] text-[#c73500]">-35%</p>
+            <h1 class="text-[25px] font-[500] text-[#b12704]">
+              $25.<sub>99</sub>
+            </h1>
+          </div>
+          <h5 class="text-[#565656] font-[400]">
+            List Price:<span class="line-through text-[#565656] font-[400]"
+              >$39.99</span
+            >
+          </h5>
+          <p>
+            Get <b>Fast, Free Shipping</b
+            ><span class="text-[#007185]"> with Amazon Prime</span>
+          </p>
+          <p>Free Returns</p>
+          <p>Join Prime for FREE delivery on this item</p>
+          <p>
+            Available at a lower price form other sellers that may not offer
+            FREE delivery
+          </p>
+        </div>
+        <div class="my-[15px] mx-0">
+          <p>color: <b>blue</b></p>
+          <div class="flex items-center gap-[5px] mt-[10px] justify-between">
+            <div
+              class="flex items-center py-[8px] px-[12px] border border-[#cbcbcb] gap-[10px] cursor-pointer"
+            >
+              <img src="/assets/product_img.jpg" width="30px" alt="" />
+              <p>black</p>
+            </div>
+
+            <div
+              class="flex items-center py-[8px] px-[12px] border border-[#cbcbcb] gap-[10px] cursor-pointer"
+            >
+              <img src="/assets/product_img.jpg" width="30px" alt="" />
+              <p>blue</p>
+            </div>
+
+            <div
+              class="flex items-center py-[8px] px-[12px] border border-[#cbcbcb] gap-[10px] cursor-pointer"
+            >
+              <img src="/assets/product_img.jpg" width="30px" alt="" />
+              <p>green</p>
+            </div>
+
+            <div
+              class="flex items-center py-[8px] px-[12px] border border-[#cbcbcb] gap-[10px] cursor-pointer"
+            >
+              <img src="/assets/product_img.jpg" width="30px" alt="" />
+              <p>pink</p>
+            </div>
+
+            <div
+              class="flex items-center py-[8px] px-[12px] border border-[#cbcbcb] gap-[10px] cursor-pointer"
+            >
+              <img src="/assets/product_img.jpg" width="30px" alt="" />
+              <p>purple</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-[10px] mt-[20px] max-w-[300px] mb-[15px]">
+          <p><b>Brand</b> BENGOO</p>
+          <p><b>Model</b> HX-HSCS-BK/NA</p>
+          <p><b>Color</b> Blue</p>
+          <p><b>Form Factor</b> Over-Ear</p>
+          <p><b>Connectivity</b> 3.5mm Jack</p>
+        </div>
+        <hr />
+        <div>
+          <h2 class="text-[20px] font-[600] mt-[20px] mb-[10px]">
+            About this item
+          </h2>
+          <p class="text-[#565656] font-[400]">
+            The HyperX Cloud Stinger Gaming Headset is designed for gamers who
+            seek a comfortable and immersive audio experience. With its
+            lightweight design, it provides long-lasting comfort during extended
+            gaming sessions. The headset features 50mm directional drivers that
+            deliver clear and powerful sound, allowing you to hear every detail
+            in your games. The noise-cancelling microphone ensures clear
+            communication with your teammates, while the durable build ensures
+            that the headset can withstand the rigors of gaming. Compatible with
+            PC, PS4, Xbox One, Nintendo Switch, and mobile devices, the HyperX
+            Cloud Stinger is a versatile choice for gamers of all platforms.
+          </p>
+          <li class="text-[#565656] font-[400]">
+            Lightweight design for long-lasting comfort
+          </li>
+          <li class="text-[#565656] font-[400]">
+            50mm directional drivers for clear and powerful sound
+          </li>
+          <li class="text-[#565656] font-[400]">
+            Noise-cancelling microphone for clear communication
+          </li>
+          <li class="text-[#565656] font-[400]">
+            Durable build to withstand the rigors of gaming
+          </li>
+          <li class="text-[#565656] font-[400]">
+            Compatible with PC, PS4, Xbox One, Nintendo Switch, and mobile
+            devices
+          </li>
+        </div>
+      </div>
+
+      <div
+        class="w-full max-w-[280px] border border-[#c1c1c1] rounded-[10px] p-[20px]"
+      >
+        <div class="flex justify-between items-center">
+          <h3>Buy New:</h3>
+          <img src="/assets/circle_icon.png" width="20px" />
+        </div>
+        <h1 class="text-[16px] font-[400] my-[10px] mx-0">
+          $<span class="text-[26px] p-[2px]">25</span>.99
+        </h1>
+
+        <div class="my-[15px] mx-0">
+          <p>
+            Get <b>Fast, Free Shipping</b>
+            <span class="text-[#0076a3]">with Amazon Prime</span>
+            <p><span class="text-[#0076a3]">Free Return</span></p>
+          </p>
+        </div>
+
+         <div class="my-[15px] mx-0">
+          <p>
+            Free Delivery <b>Saturday</b>
+            <span class="text-[#0076a3]">with Amazon Prime</span>
+            <p>January 1st - <span class="text-[#0076a3]">on orders Shipped by Amazon over $35</span></p>
+          </p>
+        </div>
+
+         <div class="my-[15px] mx-0">
+          <p>
+            Or fastest delivery<b> Tomorrow</b>
+            <span >january 23</span>
+            <p><span class="text-[#0076a3]">order within 24 hours </span></p>
+          </p>
+        </div>
+        <!-- delivery location -->
+        <div class="flex items-center gap-[3px]">
+        <i class="ri-map-pin-line text-[20px]"></i>
+        <p class="text-[#0076a3]"><span>Deliver to New York 10014</span></p>
+        </div>
+
+        <h2 class="my-[15px] mx-0 text-[green] font-[400]">In Stock</h2>
+        <select class="py-[8px] px-[5px] outline-none border border-[#c1c1c1] rounded-[5px] w-full bg-[#efefef]">
+          <option value="1">Qty: 1</option>
+          <option value="2">Qty: 2</option>
+          <option value="3">Qty: 3</option>
+          <option value="4">Qty: 4</option>
+          <option value="5">Qty: 5</option>
+        </select>
+        <div>
+          <button class="cursor-pointer outline-none border-none bg-[#ffd814] hover:bg-[#f7ca00] text-[#0f1111] font-[400] py-[10px] px-0 rounded-[50px] mt-[10px] w-full">Add To Cart</button>
+          <button class="cursor-pointer outline-none border-none bg-[#ffa41c] hover:bg-[#f7ca00] text-[#0f1111] font-[400] py-[10px] px-0 rounded-[50px] mt-[10px] w-full">Buy Now</button>
+        </div>
+
+        <!-- product seller info -->
+        <div class="grid grid-cols-2 gap-[10px] mt-[20px] text-[14px]">
+          <p>Ships Form</p> <p><span class="text-[#0076a3]">Amazon</span></p>
+          <p>Sold by</p> <p><span class="text-[#0076a3]">Bengoo Inc.</span></p>
+          <p>Returns</p> <p><span class="text-[#0076a3]">Eligible for Return, Refund or Exchange within 30 days of delivery</span></p>
+          <p>Payment</p> <p><span class="text-[#0076a3]">Secure Payment</span></p>
+        </div>
+
+        <hr class="my-[20px] mx-0">
+
+        <div>
+          <button class="w-full py-[8px] px-[15px] rounded-[5px] border border-black text-start bg-white cursor-pointer">Add to list</button>
+        </div>
+      </div>
+    </div>
+
+    <section>
+        <div
+          id="product-slider-with-price"
+          class="bg-white my-0 mx-[30px] p-[20px] mb-[15px]"
+        >
+          <h2>Related Products</h2>
+          <div class="product flex overflow-x-auto gap-[10px] mt-[10px]">
+            <div class="flex flex-col justify-end min-w-[210px] bg-[#fbfbfb]">
+              <div class="img-container">
+                <img
+                  class="w-[110px] my-0 mx-[50px]"
+                  src="/assets/product2-1.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <p
+                  class="bg-[#be0b3b] text-white inline-block py-[2px] px-[5px] rounded-[4px] my-[8px] mx-0 text-[13px]"
+                >
+                  27% off
+                </p>
+                <span class="text-[#be0b3b] font-[500] text-[12px]">Deal</span>
+              </div>
+              <p class="text-gray-600 text-[13px]">
+                $ <span class="font-[700] text-[#111]">19.99</span> List Price:
+                $27.99
+              </p>
+              <h4 class="text-[#525252] text-[15px] font-[400]">
+                This product is on sale!
+              </h4>
+            </div>
+
+            <div class="flex flex-col justify-end min-w-[210px] bg-[#fbfbfb]">
+              <div class="img-container">
+                <img
+                  class="w-[110px] my-0 mx-[50px]"
+                  src="/assets/product2-2.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <p
+                  class="bg-[#be0b3b] text-white inline-block py-[2px] px-[5px] rounded-[4px] my-[8px] mx-0 text-[13px]"
+                >
+                  25% off
+                </p>
+                <span class="text-[#be0b3b] font-[500] text-[12px]">Deal</span>
+              </div>
+              <p class="text-gray-600 text-[13px]">
+                $ <span class="font-[700] text-[#111]">18.99</span> List Price:
+                $25.49
+              </p>
+              <h4 class="text-[#525252] text-[15px] font-[400]">
+                Great price for a limited time.
+              </h4>
+            </div>
+
+            <div class="flex flex-col justify-end min-w-[210px] bg-[#fbfbfb]">
+              <div class="img-container">
+                <img
+                  class="w-[110px] my-0 mx-[50px]"
+                  src="/assets/product2-3.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <p
+                  class="bg-[#be0b3b] text-white inline-block py-[2px] px-[5px] rounded-[4px] my-[8px] mx-0 text-[13px]"
+                >
+                  22% off
+                </p>
+                <span class="text-[#be0b3b] font-[500] text-[12px]">Deal</span>
+              </div>
+              <p class="text-gray-600 text-[13px]">
+                $ <span class="font-[700] text-[#111]">17.99</span> List Price:
+                $23.09
+              </p>
+              <h4 class="text-[#525252] text-[15px] font-[400]">
+                Best value for quality.
+              </h4>
+            </div>
+
+            <div class="flex flex-col justify-end min-w-[210px] bg-[#fbfbfb]">
+              <div class="img-container">
+                <img
+                  class="w-[110px] my-0 mx-[50px]"
+                  src="/assets/product2-4.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <p
+                  class="bg-[#be0b3b] text-white inline-block py-[2px] px-[5px] rounded-[4px] my-[8px] mx-0 text-[13px]"
+                >
+                  30% off
+                </p>
+                <span class="text-[#be0b3b] font-[500] text-[12px]">Deal</span>
+              </div>
+              <p class="text-gray-600 text-[13px]">
+                $ <span class="font-[700] text-[#111]">16.99</span> List Price:
+                $24.29
+              </p>
+              <h4 class="text-[#525252] text-[15px] font-[400]">
+                Top seller this week.
+              </h4>
+            </div>
+
+            <div class="flex flex-col justify-end min-w-[210px] bg-[#fbfbfb]">
+              <div class="img-container">
+                <img
+                  class="w-[110px] my-0 mx-[50px]"
+                  src="/assets/product2-5.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <p
+                  class="bg-[#be0b3b] text-white inline-block py-[2px] px-[5px] rounded-[4px] my-[8px] mx-0 text-[13px]"
+                >
+                  28% off
+                </p>
+                <span class="text-[#be0b3b] font-[500] text-[12px]">Deal</span>
+              </div>
+              <p class="text-gray-600 text-[13px]">
+                $ <span class="font-[700] text-[#111]">15.99</span> List Price:
+                $22.29
+              </p>
+              <h4 class="text-[#525252] text-[15px] font-[400]">
+                Don’t miss this deal.
+              </h4>
+            </div>
+
+            <div class="flex flex-col justify-end min-w-[210px] bg-[#fbfbfb]">
+              <div class="img-container">
+                <img
+                  class="w-[110px] my-0 mx-[50px]"
+                  src="/assets/product2-6.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <p
+                  class="bg-[#be0b3b] text-white inline-block py-[2px] px-[5px] rounded-[4px] my-[8px] mx-0 text-[13px]"
+                >
+                  24% off
+                </p>
+                <span class="text-[#be0b3b] font-[500] text-[12px]">Deal</span>
+              </div>
+              <p class="text-gray-600 text-[13px]">
+                $ <span class="font-[700] text-[#111]">14.99</span> List Price:
+                $19.79
+              </p>
+              <h4 class="text-[#525252] text-[15px] font-[400]">
+                Limited stock available.
+              </h4>
+            </div>
+
+            <div class="flex flex-col justify-end min-w-[210px] bg-[#fbfbfb]">
+              <div class="img-container">
+                <img
+                  class="w-[110px] my-0 mx-[50px]"
+                  src="/assets/product2-7.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <p
+                  class="bg-[#be0b3b] text-white inline-block py-[2px] px-[5px] rounded-[4px] my-[8px] mx-0 text-[13px]"
+                >
+                  26% off
+                </p>
+                <span class="text-[#be0b3b] font-[500] text-[12px]">Deal</span>
+              </div>
+              <p class="text-gray-600 text-[13px]">
+                $ <span class="font-[700] text-[#111]">13.99</span> List Price:
+                $18.99
+              </p>
+              <h4 class="text-[#525252] text-[15px] font-[400]">
+                Customer favorite.
+              </h4>
+            </div>
+
+            <div class="flex flex-col justify-end min-w-[210px] bg-[#fbfbfb]">
+              <div class="img-container">
+                <img
+                  class="w-[110px] my-0 mx-[50px]"
+                  src="/assets/product2-8.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <p
+                  class="bg-[#be0b3b] text-white inline-block py-[2px] px-[5px] rounded-[4px] my-[8px] mx-0 text-[13px]"
+                >
+                  20% off
+                </p>
+                <span class="text-[#be0b3b] font-[500] text-[12px]">Deal</span>
+              </div>
+              <p class="text-gray-600 text-[13px]">
+                $ <span class="font-[700] text-[#111]">12.99</span> List Price:
+                $16.29
+              </p>
+              <h4 class="text-[#525252] text-[15px] font-[400]">
+                Great quality at low cost.
+              </h4>
+            </div>
+
+            <div class="flex flex-col justify-end min-w-[210px] bg-[#fbfbfb]">
+              <div class="img-container">
+                <img
+                  class="w-[110px] my-0 mx-[50px]"
+                  src="/assets/product2-9.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <p
+                  class="bg-[#be0b3b] text-white inline-block py-[2px] px-[5px] rounded-[4px] my-[8px] mx-0 text-[13px]"
+                >
+                  32% off
+                </p>
+                <span class="text-[#be0b3b] font-[500] text-[12px]">Deal</span>
+              </div>
+              <p class="text-gray-600 text-[13px]">
+                $ <span class="font-[700] text-[#111]">11.99</span> List Price:
+                $17.69
+              </p>
+              <h4 class="text-[#525252] text-[15px] font-[400]">
+                Best deal today.
+              </h4>
+            </div>
+
+            <div class="flex flex-col justify-end min-w-[210px] bg-[#fbfbfb]">
+              <div class="img-container">
+                <img
+                  class="w-[110px] my-0 mx-[50px]"
+                  src="/assets/product2-10.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <p
+                  class="bg-[#be0b3b] text-white inline-block py-[2px] px-[5px] rounded-[4px] my-[8px] mx-0 text-[13px]"
+                >
+                  21% off
+                </p>
+                <span class="text-[#be0b3b] font-[500] text-[12px]">Deal</span>
+              </div>
+              <p class="text-gray-600 text-[13px]">
+                $ <span class="font-[700] text-[#111]">10.99</span> List Price:
+                $13.99
+              </p>
+              <h4 class="text-[#525252] text-[15px] font-[400]">
+                Perfect choice for everyday use.
+              </h4>
+            </div>
+
+            <div class="flex flex-col justify-end min-w-[210px] bg-[#fbfbfb]">
+              <div class="img-container">
+                <img
+                  class="w-[110px] my-0 mx-[50px]"
+                  src="/assets/product2-11.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <p
+                  class="bg-[#be0b3b] text-white inline-block py-[2px] px-[5px] rounded-[4px] my-[8px] mx-0 text-[13px]"
+                >
+                  29% off
+                </p>
+                <span class="text-[#be0b3b] font-[500] text-[12px]">Deal</span>
+              </div>
+              <p class="text-gray-600 text-[13px]">
+                $ <span class="font-[700] text-[#111]">9.99</span> List Price:
+                $14.09
+              </p>
+              <h4 class="text-[#525252] text-[15px] font-[400]">
+                Highly rated deal.
+              </h4>
+            </div>
+
+            <div class="flex flex-col justify-end min-w-[210px] bg-[#fbfbfb]">
+              <div class="img-container">
+                <img
+                  class="w-[110px] my-0 mx-[50px]"
+                  src="/assets/product2-12.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <p
+                  class="bg-[#be0b3b] text-white inline-block py-[2px] px-[5px] rounded-[4px] my-[8px] mx-0 text-[13px]"
+                >
+                  23% off
+                </p>
+                <span class="text-[#be0b3b] font-[500] text-[12px]">Deal</span>
+              </div>
+              <p class="text-gray-600 text-[13px]">
+                $ <span class="font-[700] text-[#111]">8.99</span> List Price:
+                $11.79
+              </p>
+              <h4 class="text-[#525252] text-[15px] font-[400]">
+                Best under budget.
+              </h4>
+            </div>
+          </div>
+        </div>
+      </section>
+
+       <!-- footer -->
+    <footer
+      class="mt-[100px] flex justify-between items-center text-white bg-[#131921] py-[20px] px-[60px]"
+    >
+      <img width="100" src="/assets/amazon_logo.png" alt="" />
+      <p>&copy; 1996-2023, Amazon.com, Inc. or its affiliates</p>
+    </footer>
+
+
+      <script>
+        
+const scrollContainer = document.querySelectorAll(".product");
+
+for (const item of scrollContainer) {
+  item.addEventListener("wheel", (evt) => {
+    evt.preventDefault();
+    item.scrollLeft += evt.deltaY;
+  });
+}
+      </script>
+  </body>
 </html>
