@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="stylesheet" href="/src/output.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-[#dadada]">
+    <header class="w-full h-full">
+      <nav
+        class="flex flex-col md:flex-row items-center gap-3.5 justify-between p-4 bg-[#131921] text-white"
+      >
+        <!-- logo -->
+        <div>
+          <a href="/">
+            <img
+              src="/assets/amazon_logo.png"
+              alt="amazon logo"
+              class="w-24 object-contain"
+            />
+          </a>
+        </div>
+        <!-- location  -->
+        <div class="flex gap-1.5 items-end ml-3.75 text-[13px]">
+          <i class="ri-map-pin-line text-[20px]"></i>
+          <div class="text-[#c4c4c4]">
+            <p>Deliver to</p>
+            <select name="country" class="text-white text-[14px] font-[600]">
+              <option class="p-4 bg-gray-500" value="usa">United States</option>
+              <option class="p-4 bg-gray-500" value="pakistan">pakistan</option>
+              <option class="p-4 bg-gray-500" value="uk">United Kingdom</option>
+              <option class="p-4 bg-gray-500" value="canada">Canada</option>
+              <option class="p-4 bg-gray-500" value="australia">
+                Australia
+              </option>
+              <option class="p-4 bg-gray-500" value="india">India</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- navigation search -->
+        <div class="w-full flex items-center flex-1 mx-4 bg-white rounded-md">
+          <select
+            name="categories"
+            id="categories"
+            class="h-10 w-[10%] rounded-l-md focus:outline-none text-sm text-gray-600 bg-[#c4c4c4] p-2"
+          >
+            <option value="all">All</option>
+            <option value="books">Books</option>
+            <option value="electronics">Electronics</option>
+            <option value="clothing">Clothing</option>
+            <option value="home">Home & Kitchen</option>
+          </select>
+          <input
+            type="text"
+            placeholder="Search Amazon"
+            class="flex-1 h-10 px-4 focus:outline-none text-sm text-gray-600"
+          />
+          <button class="bg-[#febd69] h-10 px-4 rounded-r-md">
+            <i class="ri-search-line text-gray-600 text-[20px] font-[600]"></i>
+          </button>
+        </div>
+
+        <!-- navigation language -->
+        <div class="flex gap-1 items-center text-[13px] font-[600]">
+          <img class="h-[20px] mr-1" src="/assets/us_flag.png" alt="" />
+          <span class="text-[#c4c4c4]">EN</span>
+          <img class="w-[8px]" src="/assets/dropdown_icon.png" alt="" />
+        </div>
+
+        <!-- navigation text -->
+        <div class="flex flex-col leading-2 gap-2 text-[13px] font-[600]">
+          <span class="text-[#c4c4c4] text-[10px]">Hello, Sign in</span>
+          <div class="flex gap-1">
+            <span class="text-white text-[14px]">Account & Lists</span>
+            <img class="w-[8px]" src="/assets/dropdown_icon.png" alt="" />
+          </div>
+        </div>
+
+        <!-- returns and orders -->
+        <div class="flex flex-col leading-2 gap-2 text-[13px] font-[600]">
+          <span class="text-[#c4c4c4]">Returns</span>
+          <span class="text-white">& Orders</span>
+        </div>
+
+        <!-- navigation cart -->
+        <div class="flex items-center gap-1">
+          <a href="/cart" class="flex items-end gap-1">
+            <img class="w-[35px]" src="/assets/cart_icon.png" alt="" />
+            <h4 class="text-[13px] font-[600]">Cart</h4>
+          </a>
+        </div>
+      </nav>
+
+      <!-- sub navigation menu -->
+      <div
+        class="flex items-center px-[20px] py-[5px] gap-6 bg-[#232f3e] text-white text-[14px] font-[600]"
+      >
+        <div class="flex items-center gap-1 cursor-pointer">
+          <i class="ri-menu-line text-[25px]"></i>
+          <span class="text-[15px]">All</span>
+        </div>
+
+        <div class="font-[500]">
+          <a href="">Today's Deals</a>
+        </div>
+        <div class="font-[500]">
+          <a href="">Gift Cards</a>
+        </div>
+        <div class="font-[500]">
+          <a href="">Sell</a>
+        </div>
+        <div class="font-[500]">
+          <a href="">Registry</a>
+        </div>
+        <div class="font-[500]">
+          <a href="">Prime Video</a>
+        </div>
+        <div class="font-[500]">
+          <a href="">Customer Service</a>
+        </div>
+      </div>
+    </header>
+    <!-- cart content -->
+    <div class="flex flex-col md:flex-row gap-[20px] m-[20px]">
+      <!-- cart left -->
+      <div class="bg-white p-[20px]">
+        <h1 class="text-[28px] font-[400] mb-15px">Shopping Cart</h1>
+        <hr class="border-none h-[1px] mb-2.5 bg-[#dadada]" />
+
+        <div
+          class="flex items-start gap-[10px] pt-[24px] pb-0 pl-[12px] pr-[12px]"
+        >
+          <img src="/assets/ipad_img.jpg" alt="" class="w-[180px]" />
+          <div>
+            <div class="flex gap-[20px] text-[18px]">
+              <p>
+                Apple iPad (10th Generation) 64GB, Wi-Fi, 10.9" Display, A14
+                Bionic Chip
+              </p>
+              <p><b>Price:</b> $449.00</p>
+            </div>
+            <p class="text-[12px] mt-[10px]">
+              <span
+                class="font-[500] rounded-[5px] text-[13px] bg-[#c45500] text-[white] py-[3px] px-[8px]"
+                >#1 Best seller</span
+              >
+              in computers Tablets
+            </p>
+            <p class="text-[16px] my-[10px] font-[600] text-[#007600]">
+              In Stock
+            </p>
+            <p class="text-[15px]">
+              FREE delivery <b>Mon, Jan 1</b> available at checkout
+            </p>
+            <p class="text-[15px] text-[#007185] font-[400]">
+              FREE Returns &#8212; no questions asked
+            </p>
+            <p class="text-[15px] text-[#494949] my-[3px] mx-0">
+              Gift options not available.
+              <span class="text-[13px] text-[#007600] underline"
+                >Learn more</span
+              >
+            </p>
+            <!-- product cart specifications -->
+            <div class="text-[14px] mt-[10px] text-[#494949]">
+              <p><b>Brand:</b> Apple</p>
+              <p><b>Size:</b> 10.9"</p>
+              <p><b>Color:</b> Space Gray</p>
+              <p><b>Connectivity:</b> Wi-Fi</p>
+              <p><b>Storage:</b> 64GB</p>
+              <p><b>Processor:</b> A14 Bionic Chip</p>
+            </div>
+
+            <!-- cart actions list -->
+            <div class="flex gap-[12px] mt-5 text-[14px] text-[#007185]">
+              <select
+                name="quantity"
+                id="quantity"
+                class="p-[5px] rounded-[6px] bg-[#f3f3f3] focus:outline-none text-[15px] text-[black]"
+              >
+                <option value="Qty: 1">Qty: 1</option>
+                <option value="Qty: 2">Qty: 2</option>
+                <option value="Qty: 3">Qty: 3</option>
+              </select>
+              <hr class="h-[20px] w-[1px] bg-[#cfcfcf]" />
+              <button>Delete</button>
+              <hr class="h-[20px] w-[1px] bg-[#cfcfcf]" />
+              <button>Save for Later</button>
+              <hr class="h-[20px] w-[1px] bg-[#cfcfcf]" />
+              <button>Compare with Similar Items</button>
+              <hr class="h-[20px] w-[1px] bg-[#cfcfcf]" />
+              <button>Share</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- product two -->
+
+        <hr class="border-none h-[1px] mb-2.5 bg-[#dadada]" />
+
+        <div
+          class="flex items-start gap-[10px] pt-[24px] pb-0 pl-[12px] pr-[12px] mt-9"
+        >
+          <img src="/assets/product_img.jpg" class="w-[180px]" />
+          <div>
+            <div class="flex gap-[20px] text-[18px]">
+              <p>
+                BENGOO G9000 HyperX Cloud Stinger Gaming Headset - Lightweight
+                Comfort with Immersive Sound, Noise-Cancelling Microphone, and
+                Durable Build for PC, PS4, Xbox One, Nintendo Switch, and Mobile
+                Devices (HX-HSCS-BK/NA)
+              </p>
+              <p><b>Price:</b> $99.99</p>
+            </div>
+            <p class="text-[12px] mt-[10px]">
+              <span
+                class="font-[500] rounded-[5px] text-[13px] bg-[#c45500] text-[white] py-[3px] px-[8px]"
+                >#1 Best seller</span
+              >
+              in Gaming Headsets
+            </p>
+            <p class="text-[16px] my-[10px] font-[600] text-[#007600]">
+              In Stock
+            </p>
+            <p class="text-[15px]">
+              FREE delivery <b>Mon, Jan 1</b> available at checkout
+            </p>
+            <p class="text-[15px] text-[#007185] font-[400]">
+              FREE Returns &#8212; no questions asked
+            </p>
+            <p class="text-[15px] text-[#494949] my-[3px] mx-0">
+              Gift options not available.
+              <span class="text-[13px] text-[#007600] underline"
+                >Learn more</span
+              >
+            </p>
+            <!-- product cart specifications -->
+            <div class="text-[14px] mt-[10px] text-[#494949]">
+              <p><b>Brand:</b> BENGOO</p>
+              <p><b>Size:</b> 10.9"</p>
+              <p><b>Color:</b> Blue</p>
+              <p><b>Connectivity:</b> Wi-Fi</p>
+            </div>
+
+            <!-- cart actions list -->
+            <div class="flex gap-[12px] mt-5 text-[14px] text-[#007185]">
+              <select
+                name="quantity"
+                id="quantity"
+                class="p-[5px] rounded-[6px] bg-[#f3f3f3] focus:outline-none text-[15px] text-[black]"
+              >
+                <option value="Qty: 1">Qty: 1</option>
+                <option value="Qty: 2">Qty: 2</option>
+                <option value="Qty: 3">Qty: 3</option>
+              </select>
+              <hr class="h-[20px] w-[1px] bg-[#cfcfcf]" />
+              <button>Delete</button>
+              <hr class="h-[20px] w-[1px] bg-[#cfcfcf]" />
+              <button>Save for Later</button>
+              <hr class="h-[20px] w-[1px] bg-[#cfcfcf]" />
+              <button>Compare with Similar Items</button>
+              <hr class="h-[20px] w-[1px] bg-[#cfcfcf]" />
+              <button>Share</button>
+            </div>
+          </div>
+        </div>
+        <hr class="border-none h-[1px] my-5-2.5 bg-[#dadada]" />
+
+        <!-- cart list subtotal -->
+        <div>
+          <h2 class="text-right text-[22px] font-[400] mt-[20px]">
+            Subtotal (2 items): <span class="font-[600]">$548.99</span>
+          </h2>
+        </div>
+      </div>
+
+      <!-- cart right -->
+      <div class="bg-white p-[20px] max-h-[220px] min-w-[280px]">
+        <div class="flex text-[13px]">
+          <p>&#x2705</p>
+          <p>Your order qualifies for FREE Delivery.<b>Choose this option at checkout.</b>See details</p>
+        </div>
+        <p class="mt-[20px] text-[18px] font-[500]">Subtotal (2 items): <span class="font-[600]">$548.99</span></p>
+        <p class="my-[7px] mx-0 text-[14px]"><input type="checkbox"> This order contains a gift</p>
+        <button class="w-full h-[33px] my-[15px] mx-0 bg-[#ffd814] hover:bg-[#f7c100] text-[14px] font-[500] border border-[#d49500] rounded-[6px] cursor-pointer">Proceed to Checkout</button>
+      </div>
+    </div>
+  </body>
+</html>
