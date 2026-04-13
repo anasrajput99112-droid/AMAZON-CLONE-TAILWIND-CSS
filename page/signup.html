@@ -23,29 +23,35 @@
       <h1 class="text-[28px] font-[400]">Create Account</h1>
       <h5 class="text-[16px] font-[400]">Your name</h5>
       <input
+        id="signupName"
         class="w-full p-[10px] mt-[10px] mb-[20px] border border-[#d2d2d2] rounded-[8px]"
         type="text"
         placeholder="First and last name"
       />
       <h5 class="text-[16px] font-[400]">Email</h5>
       <input
+        id="signupEmail"
         class="w-full p-[10px] mt-[10px] mb-[20px] border border-[#d2d2d2] rounded-[8px]"
         type="email"
         placeholder="Type Email"
       />
       <h5 class="text-[16px] font-[400]">Mobile number</h5>
       <input
+        id="signupMobile"
         class="w-full p-[10px] mt-[10px] mb-[20px] border border-[#d2d2d2] rounded-[8px]"
         type="text"
         placeholder="Mobile number"
       />
       <h5 class="text-[16px] font-[400]">Password</h5>
       <input
+        id="signupPassword"
         class="w-full p-[10px] mt-[10px] mb-[20px] border border-[#d2d2d2] rounded-[8px]"
         type="password"
         placeholder="At least 6 characters"
       />
+      <div id="signupError" class="text-red-500 text-[13px] mb-3 hidden"></div>
       <button
+        id="signupBtn"
         class="w-full bg-[#f0c14b] hover:bg-[#e7a322] text-[16px] font-[400] py-[10px] rounded-[8px] border border-[#d2d2d2]"
       >
         Create your Amazon account
@@ -62,5 +68,6 @@
         >Already have an account?</a
       >
     </div>
+    <script src="../js/main.js"></script>
   </body>
 </html>

@@ -15,7 +15,7 @@
   <body class="bg-[#dadada]">
     <header class="w-full h-full">
       <nav
-        class="flex flex-col md:flex-row items-center gap-3.5 justify-between p-4 bg-[#131921] text-white"
+        class="flex flex-wrap items-center gap-2 md:gap-3.5 p-3 md:p-4 bg-[#131921] text-white"
       >
         <!-- logo -->
         <div>
@@ -28,7 +28,7 @@
           </a>
         </div>
         <!-- location  -->
-        <div class="flex gap-1.5 items-end ml-3.75 text-[13px]">
+        <div class="hidden sm:flex gap-1.5 items-end ml-2 lg:ml-3.75 text-[13px]">
           <i class="ri-map-pin-line text-[20px]"></i>
           <div class="text-[#c4c4c4]">
             <p>Deliver to</p>
@@ -46,11 +46,11 @@
         </div>
 
         <!-- navigation search -->
-        <div class="w-full flex items-center flex-1 mx-4 bg-white rounded-md">
+        <div class="w-full md:w-auto flex items-center flex-1 mx-0 md:mx-4 bg-white rounded-md order-last md:order-none mt-2 md:mt-0">
           <select
             name="categories"
             id="categories"
-            class="h-10 w-[10%] rounded-l-md focus:outline-none text-sm text-gray-600 bg-[#c4c4c4] p-2"
+            class="h-10 w-fit sm:w-[10%] rounded-l-md focus:outline-none text-sm text-gray-600 bg-[#c4c4c4] p-2"
           >
             <option value="all">All</option>
             <option value="books">Books</option>
@@ -69,14 +69,14 @@
         </div>
 
         <!-- navigation language -->
-        <div class="flex gap-1 items-center text-[13px] font-[600]">
+        <div class="hidden md:flex gap-1 items-center text-[13px] font-[600]">
           <img class="h-[20px] mr-1" src="/assets/us_flag.png" alt="" />
           <span class="text-[#c4c4c4]">EN</span>
           <img class="w-[8px]" src="/assets/dropdown_icon.png" alt="" />
         </div>
 
         <!-- navigation text -->
-        <div class="flex flex-col leading-2 gap-2 text-[13px] font-[600]">
+        <div class="hidden sm:flex flex-col leading-tight gap-1 text-[13px] font-[600]">
           <span class="text-[#c4c4c4] text-[10px]"
             ><a href="./page/signin.html">Hello, Sign in</a></span
           >
@@ -87,13 +87,13 @@
         </div>
 
         <!-- returns and orders -->
-        <div class="flex flex-col leading-2 gap-2 text-[13px] font-[600]">
+        <div class="hidden lg:flex flex-col leading-tight gap-1 text-[13px] font-[600]">
           <span class="text-[#c4c4c4]">Returns</span>
           <span class="text-white">& Orders</span>
         </div>
 
         <!-- navigation cart -->
-        <div class="flex items-center gap-1">
+        <div class="flex items-center gap-1 ml-auto sm:ml-0">
           <a href="/page/cart.html" class="flex items-end gap-1">
             <img class="w-[35px]" src="/assets/cart_icon.png" alt="" />
             <h4 class="text-[13px] font-[600]">Cart</h4>
@@ -103,7 +103,7 @@
 
       <!-- sub navigation menu -->
       <div
-        class="flex items-center px-[20px] py-[5px] gap-6 bg-[#232f3e] text-white text-[14px] font-[600]"
+        class="flex items-center px-4 py-2 gap-4 md:gap-6 bg-[#232f3e] text-white text-[13px] md:text-[14px] font-[600] overflow-x-auto whitespace-nowrap"
       >
         <div class="flex items-center gap-1 cursor-pointer">
           <i class="ri-menu-line text-[25px]"></i>
@@ -194,20 +194,20 @@
       <!-- first product cards -->
       <section>
         <div
-          class="flex justify-between m-9 gap-[20px] -mt-[20vw] z-10 relative"
+          class=" flex justify-between items-center  md:flex-row m-9 flex-col gap-[10px] -mt-[20vw] z-10 relative"
         >
           <div
-            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[24%] min-h-[200px]"
+            class=" flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[90%] min-h-[250px]"
           >
             <h3>Free international returns</h3>
-            <img src="/assets/box1-1.jpg" alt="" />
+            <img src="/assets/box1-1.jpg" alt=""/>
             <a class="text-[13px] text-[#009999] font-[500]" href="/"
               >Shop More</a
             >
           </div>
 
           <div
-            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[24%] min-h-[200px]"
+            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[90%] min-h-[250px]"
           >
             <h3>lunar New Year</h3>
             <img src="/assets/box1-2.jpg" alt="" />
@@ -217,7 +217,7 @@
           </div>
 
           <div
-            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[24%] min-h-[200px]"
+            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[90%] min-h-[250px]"
           >
             <h3>Toy under $25</h3>
             <img src="/assets/box1-3.jpg" alt="" />
@@ -227,7 +227,7 @@
           </div>
 
           <div
-            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[24%] min-h-[200px]"
+            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[90%] min-h-[250px]"
           >
             <h3>Deal in PCs</h3>
             <img src="/assets/box1-4.jpg" alt="" />
@@ -237,9 +237,9 @@
           </div>
         </div>
 
-        <div class="flex justify-between m-9 gap-[20px]">
+        <div class="flex justify-between items-center md:flex-row flex-col m-9 gap-[20px]">
           <div
-            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[24%] min-h-[200px]"
+            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[90%] min-h-[250px]"
           >
             <h3>Grooming Products</h3>
             <img src="/assets/box2-1.jpg" alt="" />
@@ -249,7 +249,7 @@
           </div>
 
           <div
-            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[24%] min-h-[200px]"
+            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[90%] min-h-[250px]"
           >
             <h3>Lates products</h3>
             <img src="/assets/box2-2.jpg" alt="" />
@@ -259,7 +259,7 @@
           </div>
 
           <div
-            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[24%] min-h-[200px]"
+            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[90%] min-h-[250px]"
           >
             <h3>Pets Food</h3>
             <img src="/assets/box2-3.jpg" alt="" />
@@ -269,7 +269,7 @@
           </div>
 
           <div
-            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[24%] min-h-[200px]"
+            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[90%] min-h-[250px]"
           >
             <h3>Fashion Mart</h3>
             <img src="/assets/box2-4.jpg" alt="" />
@@ -342,9 +342,9 @@
 
       <!-- second product cards  -->
       <section>
-        <div class="flex justify-between m-9 gap-[20px]">
+        <div class="flex justify-between items-center md:flex-row flex-col m-9 gap-[20px]">
           <div
-            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[24%] min-h-[200px]"
+            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[90%] min-h-[250px]"
           >
             <h3>Stationery</h3>
             <img src="/assets/box3-1.jpg" alt="" />
@@ -354,17 +354,19 @@
           </div>
 
           <div
-            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[24%] min-h-[200px]"
+            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[90%] min-h-[250px]"
           >
             <h3>laptop for study</h3>
-            <img src="/assets/box3-2.jpg" alt="" />
-            <a class="text-[13px] text-[#009999] font-[500]" href="/"
+            <a href="./page/product.html?id=p4" class="block">
+              <img src="/assets/box3-2.jpg" alt="" class="hover:opacity-80 transition" />
+            </a>
+            <a class="text-[13px] text-[#009999] font-[500]" href="./page/product.html?id=p4"
               >Shop More</a
             >
           </div>
 
           <div
-            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[24%] min-h-[200px]"
+            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[90%] min-h-[250px]"
           >
             <h3>Office Supplies</h3>
             <img src="/assets/box3-3.jpg" alt="" />
@@ -374,7 +376,7 @@
           </div>
 
           <div
-            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[24%] min-h-[200px]"
+            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[90%] min-h-[250px]"
           >
             <h3>Gaming Monitor</h3>
             <img src="/assets/box3-4.jpg" alt="" />
@@ -393,7 +395,7 @@
         >
           <h2>Deals Under $25</h2>
           <div class="product flex overflow-x-auto gap-[10px] mt-[10px]">
-            <div class="flex flex-col justify-end min-w-[210px] bg-[#fbfbfb]">
+            <a href="./page/product.html?id=p3" class="flex flex-col justify-end min-w-[210px] bg-[#fbfbfb] hover:shadow-md transition cursor-pointer">
               <div class="img-container">
                 <img
                   class="w-[110px] my-0 mx-[50px]"
@@ -401,7 +403,7 @@
                   alt=""
                 />
               </div>
-              <div>
+              <div class="px-2">
                 <p
                   class="bg-[#be0b3b] text-white inline-block py-[2px] px-[5px] rounded-[4px] my-[8px] mx-0 text-[13px]"
                 >
@@ -409,14 +411,14 @@
                 </p>
                 <span class="text-[#be0b3b] font-[500] text-[12px]">Deal</span>
               </div>
-              <p class="text-gray-600 text-[13px]">
+              <p class="text-gray-600 text-[13px] px-2">
                 $ <span class="font-[700] text-[#111]">19.99</span> List Price:
                 $27.99
               </p>
-              <h4 class="text-[#525252] text-[15px] font-[400]">
+              <h4 class="text-[#525252] text-[15px] font-[400] px-2 pb-2">
                 This product is on sale!
               </h4>
-            </div>
+            </a>
 
             <div class="flex flex-col justify-end min-w-[210px] bg-[#fbfbfb]">
               <div class="img-container">
@@ -757,9 +759,9 @@
 
       <!-- third product card -->
       <section>
-        <div class="flex justify-between m-9 gap-[20px]">
+        <div class="flex justify-between items-center md:flex-row flex-col m-9 gap-[20px]">
           <div
-            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[24%] min-h-[200px]"
+            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[90%] min-h-[250px]"
           >
             <h3>Trimmer</h3>
             <img src="/assets/box2-1.jpg" alt="" />
@@ -769,7 +771,7 @@
           </div>
 
           <div
-            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[24%] min-h-[200px]"
+            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[90%] min-h-[250px]"
           >
             <h3>latest Devices</h3>
             <img src="/assets/box2-2.jpg" alt="" />
@@ -779,7 +781,7 @@
           </div>
 
           <div
-            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[24%] min-h-[200px]"
+            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[90%] min-h-[250px]"
           >
             <h3>Pet Food</h3>
             <img src="/assets/box2-3.jpg" alt="" />
@@ -789,7 +791,7 @@
           </div>
 
           <div
-            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[24%] min-h-[200px]"
+            class="flex flex-col gap-[10px] px-[20px] py-[15px] bg-[#fff] max-w-[90%] min-h-[250px]"
           >
             <h3>Fashion Mart</h3>
             <img src="/assets/box2-4.jpg" alt="" />
