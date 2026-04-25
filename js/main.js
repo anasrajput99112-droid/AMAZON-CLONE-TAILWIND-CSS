@@ -53,10 +53,50 @@ document.addEventListener("DOMContentLoaded", () => {
   if (currentUser) {
     authLinks.forEach(link => {
       if (link.textContent.includes('Hello, Sign in') || (link.href && link.href.includes('signin.html') && link.textContent.includes('Hello,'))) {
-        link.textContent = 'Hello, ' + currentUser;
+        link.innerHTML = `Hello, ${currentUser} <br><span id="signOutBtn" class="text-blue-400 hover:text-red-500 hover:underline cursor-pointer text-[12px] mt-1 relative z-50 inline-block pointer-events-auto">Sign Out</span>`;
         link.href = '#'; 
       }
     });
+
+    document.addEventListener("click", (e) => {
+      if (e.target && e.target.id === "signOutBtn") {
+        e.preventDefault();
+        localStorage.removeItem("currentUser");
+        window.location.reload();
+      }
+    });
+  }
+
+  function requireAuth(e) {
+    if (!localStorage.getItem("currentUser")) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      alert("Please sign in first to proceed.");
+      window.location.href = window.location.pathname.includes('/page/') ? 'signin.html' : './page/signin.html';
+    }
+  }
+
+  const checkoutBtn = document.getElementById("checkoutBtn");
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener("click", requireAuth, true);
+    checkoutBtn.addEventListener("click", () => {
+       window.location.href = window.location.pathname.includes('/page/') ? 'checkout.html' : './page/checkout.html';
+    });
+  }
+
+  const buyNowBtn = document.getElementById("buyNowBtn");
+  if (buyNowBtn) {
+    buyNowBtn.addEventListener("click", requireAuth, true);
+    buyNowBtn.addEventListener("click", () => {
+       const globalAddToCartBtn = document.getElementById("addToCartBtn");
+       if (globalAddToCartBtn) { globalAddToCartBtn.click(); }
+       window.location.href = window.location.pathname.includes('/page/') ? 'checkout.html' : './page/checkout.html';
+    });
+  }
+
+  const globalAddToCartBtn = document.getElementById("addToCartBtn");
+  if (globalAddToCartBtn) {
+    globalAddToCartBtn.addEventListener("click", requireAuth, true);
   }
 
   // --- SIGN UP LOGIC --- //

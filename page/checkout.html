@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon Checkout</title>
+  <link rel="stylesheet" href="/src/output.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body class="bg-[#f0f2f2]">
+  <!-- header -->
+  <header class="w-full bg-[#131921] py-3">
+    <div class="max-w-[1000px] mx-auto flex justify-between items-center px-4">
+      <a href="../index.html">
+        <img src="/assets/amazon_logo.png" alt="Amazon Logo" class="w-24 object-contain mt-2" />
+      </a>
+      <h1 class="text-[28px] font-normal text-white hidden sm:block">Checkout (<span id="cartCount">0</span> items)</h1>
+      <i class="ri-lock-2-line text-white text-2xl"></i>
+    </div>
+  </header>
+
+  <!-- main content -->
+  <main class="max-w-[1000px] mx-auto mt-6 px-4 flex flex-col md:flex-row gap-6 mb-10">
+    <!-- left forms -->
+    <div class="flex-1 flex flex-col gap-6">
+      
+      <!-- Shipping address -->
+      <div class="bg-white p-5 border border-[#dddddd] rounded">
+        <h2 class="text-xl font-bold mb-4">1. Shipping address</h2>
+        <div class="flex flex-col gap-3 max-w-[500px]">
+          <input type="text" placeholder="Full name (First and Last name)" class="border border-[#a6a6a6] rounded px-3 py-2 text-sm focus:outline-none focus:border-[#e77600] focus:shadow-[0_0_3px_2px_rgba(228,121,17,0.5)]">
+          <input type="text" placeholder="Street address or P.O. Box" class="border border-[#a6a6a6] rounded px-3 py-2 text-sm focus:outline-none focus:border-[#e77600] focus:shadow-[0_0_3px_2px_rgba(228,121,17,0.5)]">
+          <div class="flex flex-col sm:flex-row gap-3">
+             <input type="text" placeholder="City" class="border border-[#a6a6a6] rounded px-3 py-2 text-sm focus:outline-none focus:border-[#e77600] flex-1">
+             <input type="text" placeholder="State" class="border border-[#a6a6a6] rounded px-3 py-2 text-sm focus:outline-none focus:border-[#e77600] w-full sm:w-20">
+             <input type="text" placeholder="ZIP Code" class="border border-[#a6a6a6] rounded px-3 py-2 text-sm focus:outline-none focus:border-[#e77600] w-full sm:w-24">
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment method -->
+      <div class="bg-white p-5 border border-[#dddddd] rounded">
+        <h2 class="text-xl font-bold mb-4">2. Payment method</h2>
+        <div class="flex flex-col gap-2">
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input type="radio" name="payment" checked class="w-4 h-4 cursor-pointer accent-[#e77600]">
+            <span class="font-semibold text-[15px]">Credit or debit card</span>
+          </label>
+          <div class="ml-6 flex flex-col gap-3 max-w-[300px] mt-2">
+             <input type="text" placeholder="Card number" class="border border-[#a6a6a6] rounded px-3 py-2 text-sm focus:outline-none focus:border-[#e77600] focus:shadow-[0_0_3px_2px_rgba(228,121,17,0.5)]">
+             <input type="text" placeholder="Name on card" class="border border-[#a6a6a6] rounded px-3 py-2 text-sm focus:outline-none focus:border-[#e77600] focus:shadow-[0_0_3px_2px_rgba(228,121,17,0.5)]">
+             <div class="flex gap-3">
+                <input type="text" placeholder="MM/YY" class="border border-[#a6a6a6] rounded px-3 py-2 text-sm w-20 focus:outline-none focus:border-[#e77600] focus:shadow-[0_0_3px_2px_rgba(228,121,17,0.5)]">
+                <input type="text" placeholder="CVV" class="border border-[#a6a6a6] rounded px-3 py-2 text-sm w-16 focus:outline-none focus:border-[#e77600] focus:shadow-[0_0_3px_2px_rgba(228,121,17,0.5)]">
+             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review items -->
+      <div class="bg-white p-5 border border-[#dddddd] rounded">
+        <h2 class="text-xl font-bold mb-4">3. Review items and shipping</h2>
+        <div id="checkoutItemsList" class="flex flex-col gap-4">
+           <!-- Checkout items will be injected here -->
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- Right Summary Panel -->
+    <div class="w-full md:w-[300px]">
+      <div class="bg-white p-5 border border-[#dddddd] rounded flex flex-col gap-3 sticky top-4">
+        <button id="placeOrderBtn" class="w-full bg-[#fbd814] hover:bg-[#f7ca00] text-[13px] font-semibold py-2 px-4 rounded-[8px] border border-[#d5a901] shadow-sm cursor-pointer transition-colors">
+          Place your order
+        </button>
+        <p class="text-[11px] text-[#565959] text-center leading-tight">By placing your order, you agree to Amazon's privacy notice and conditions of use.</p>
+        <hr class="border-[#ddd] my-1">
+        <h3 class="font-bold text-[18px]">Order Summary</h3>
+        <div class="text-[14px] flex flex-col gap-1">
+          <div class="flex justify-between"><span>Items:</span><span id="summaryItemsPrice">$0.00</span></div>
+          <div class="flex justify-between"><span>Shipping & handling:</span><span>$0.00</span></div>
+          <div class="flex justify-between mt-1 pt-1 border-t border-transparent"><span>Total before tax:</span><span id="summaryBeforeTax">$0.00</span></div>
+          <div class="flex justify-between border-b border-[#ddd] pb-2"><span>Estimated tax to be collected:</span><span id="summaryTax">$0.00</span></div>
+          <div class="flex justify-between font-bold text-[18px] text-[#b12704] mt-2"><span>Order total:</span><span id="summaryTotal">$0.00</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+       const currentUser = localStorage.getItem("currentUser");
+       if(!currentUser) {
+         window.location.href = "signin.html";
+         return;
+       }
+       
+       let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+       
+       const checkoutItemsList = document.getElementById("checkoutItemsList");
+       let totalPrice = 0;
+       let totalCount = 0;
+
+       if(cart.length === 0) {
+         checkoutItemsList.innerHTML = "<p class='text-gray-500'>Your cart is empty.</p>";
+       } else {
+         checkoutItemsList.innerHTML = "";
+         cart.forEach(item => {
+            const itemPrice = parseFloat(item.price) || 0;
+            const itemQuantity = parseInt(item.quantity) || 1;
+            totalPrice += itemPrice * itemQuantity;
+            totalCount += itemQuantity;
+            
+            let itemImg = item.img || "/assets/product_img.jpg";
+            if (itemImg.startsWith("./")) {
+               itemImg = itemImg.substring(1);
+            } else if (!itemImg.startsWith("/")) {
+               itemImg = "/" + itemImg;
+            }
+            
+            checkoutItemsList.innerHTML += \`
+              <div class="flex flex-col sm:flex-row gap-4 border border-[#ddd] p-4 rounded bg-[#f7fafa]">
+                <div class="bg-white p-2 border border-[#eee] rounded h-fit">
+                    <img src="\${itemImg}" class="w-24 h-24 object-contain" />
+                </div>
+                <div class="flex flex-col flex-1 gap-1">
+                   <p class="font-bold text-[15px]">\${item.title || 'Amazon Product'}</p>
+                   <p class="text-[#b12704] font-bold text-[16px]">$\${itemPrice.toFixed(2)}</p>
+                   <p class="text-[13px] text-[#565959] mt-2">Quantity: \${itemQuantity}</p>
+                   <p class="text-[13px] text-[#007600] font-medium mt-1">In Stock</p>
+                </div>
+              </div>
+            \`;
+         });
+       }
+
+       document.getElementById("cartCount").innerText = totalCount;
+       document.getElementById("summaryItemsPrice").innerText = "$" + totalPrice.toFixed(2);
+       document.getElementById("summaryBeforeTax").innerText = "$" + totalPrice.toFixed(2);
+       const tax = totalPrice > 0 ? totalPrice * 0.08 : 0; 
+       document.getElementById("summaryTax").innerText = "$" + tax.toFixed(2);
+       const orderTotal = totalPrice + tax;
+       document.getElementById("summaryTotal").innerText = "$" + orderTotal.toFixed(2);
+
+       document.getElementById("placeOrderBtn").addEventListener("click", () => {
+          if (cart.length === 0) {
+             alert("Your cart is empty! Please add items before placing an order.");
+             window.location.href = "../index.html";
+             return;
+          }
+          alert("Order placed successfully! Thank you " + currentUser + " for shopping with Amazon.");
+          localStorage.removeItem("cartItems"); // clear cart
+          window.location.href = "../index.html";
+       });
+    });
+  </script>
+</body>
+</html>
